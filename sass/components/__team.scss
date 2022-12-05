@@ -1,0 +1,31 @@
+.team {
+    @extend %section;
+    background-color: #F5F4FA;
+
+    &__list {
+    @media screen and (min-width: 768px) {
+    display: flex; }
+    background-color: #F5F4FA;
+    }
+
+    &__item:not(:last-child) {
+    margin-right: 30px;
+    }
+
+    &__item {
+    box-shadow: var(--card-shadow);
+    }
+
+    &__title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: calc(33/28);
+    text-align: center;
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: calc(42/36);
+    }
+    }
+}
