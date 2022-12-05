@@ -1,40 +1,76 @@
 .advantages {
     @extend %section;
-    
-    @extend %list;
-    @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: space-between;
+
+    &__list {
+        @extend %list;
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
     }
+
     &__list:not(:last-child) {
         margin-right: 30px;
+
         @media screen and (max-width: 767px) {
             margin-bottom: 30px;
         }
     }
-    
+
     &__item {
         background-color: #F5F4FA;
-        width: 450px;
-        height: 120px;
-        padding: 25px 192px;
-        margin-bottom: 30px;
 
         @media screen and (min-width: 768px) {
-            width: 354px;
-            padding: 25px 142px;
-            }
+            width: calc((100% - 2 * 15px) / 2);
+        }
 
         @media screen and (min-width: 1200px) {
             width: 270px;
-            padding: 25px 100px;
-            }
+        }
+
     }
-    
+
+    @media screen and (min-width: 768px) {
+        &__item:nth-child(-n+2) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &__item:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        &__item:not(:first-child) {
+            margin-left: 30px;
+        }
+    }
+
     &__icon {
         fill: currentColor;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        margin-bottom: 30px;
     }
-          
+
     &__title {
         margin-bottom: 10px;
         font-weight: 700;
@@ -42,18 +78,18 @@
         line-height: calc(16/14);
         text-transform: uppercase;
         text-align: center;
-    @media screen and (min-width: 768px) {
-        text-align: start;
+
+        @media screen and (min-width: 768px) {
+            text-align: start;
+        }
+
     }
-        
-    }
-    
+
     &__text {
-        
+
         line-height: calc(24/14);
-        
+
         color: var(--main-text-color);
     }
 
 }
-
